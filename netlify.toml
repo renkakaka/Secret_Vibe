@@ -1,7 +1,7 @@
 [build]
-  base = "client"
-  publish = "dist"
-  command = "npm install --legacy-peer-deps && npm run build"
+  # билдим из корня репозитория, потому что используется npm workspaces
+  publish = "client/dist"
+  command = "npm install && npm run build -w client"
 
 [build.environment]
   NODE_VERSION = "18"
