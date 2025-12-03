@@ -40,16 +40,36 @@ npm run dev
 - API — `http://localhost:4000/api`
 - Клиент — `http://localhost:5173`
 
+### Работа через браузер (локально)
+
+Для работы через браузер запустите оба сервера локально:
+
+1. **Запусти API сервер** (в одном терминале):
+   ```bash
+   cd server
+   npm run dev
+   ```
+
+2. **Запусти клиент** (в другом терминале):
+   ```bash
+   cd client
+   npm run dev
+   ```
+
+3. Откройте в браузере: `http://localhost:5173`
+
+Приложение будет работать полностью — лента, профиль, свайпы, чат, челленджи и коды. API будет доступен на `http://localhost:4000/api`.
+
 ### Деплой на Netlify
 
 1. Подключите репозиторий к Netlify.
 2. В настройках сборки укажите:
-   - **Base directory**: `client`
-   - **Build command**: `npm install && npm run build`
-   - **Publish directory**: `client/dist`
-3. Добавьте переменную окружения:
-   - `VITE_API_BASE` = URL вашего API сервера (например, `https://your-api.railway.app/api`)
-4. После деплоя скопируйте URL и используйте его в `@BotFather` как WebApp URL.
+   - **Base directory**: `client` (или оставьте пустым, если используете `netlify.toml`)
+   - **Build command**: оставьте пустым (используется из `netlify.toml`)
+   - **Publish directory**: `dist` (или оставьте пустым)
+3. После деплоя скопируйте URL и используйте его в `@BotFather` как WebApp URL.
+
+**Примечание**: После деплоя на Netlify нужно будет также задеплоить API сервер (например, на Railway, Render или VPS) и добавить переменную окружения `VITE_API_BASE` в Netlify с URL вашего API.
 
 ### Telegram WebApp / OAuth
 

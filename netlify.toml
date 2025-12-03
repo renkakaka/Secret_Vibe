@@ -1,7 +1,7 @@
 [build]
   base = "client"
   publish = "dist"
-  command = "npm install && npm run build"
+  command = "npm install && npx vite build"
 
 [build.environment]
   NODE_VERSION = "18"
@@ -10,4 +10,3 @@
   from = "/*"
   to = "/index.html"
   status = 200
-
