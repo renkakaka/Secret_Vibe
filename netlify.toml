@@ -1,8 +1,7 @@
 [build]
   base = "client"
   publish = "dist"
-  # Netlify сам делает npm install в каталоге client, тут только запуск скрипта сборки
-  command = "npm run build"
+  command = "npm install --legacy-peer-deps && npm run build"
 
 [build.environment]
   NODE_VERSION = "18"
